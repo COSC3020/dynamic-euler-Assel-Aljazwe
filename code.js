@@ -1,9 +1,20 @@
 function factorial(n) {
-    if(n === 0) return 1;
-    else return n * factorial(n - 1);
+    let result = 1;
+    for (let i = 1; i <= n; i++) {
+        result *= i;
+    }
+    return result;
 }
 
 function e(n) {
-    if(n === 0) return 1;
-    else return 1.0 / factorial(n) + e(n - 1);
+    let sum = 1.0; // Start with the first term of the series
+    let fact = 1;  // Initializing factorial result for 0!
+    for (let i = 1; i <= n; i++) {
+        fact *= i;  // Calculating i! iteratively to avoid repeated work
+        sum += 1.0 / fact;
+    }
+    return sum;
 }
+
+module.exports = { factorial, e };
+
