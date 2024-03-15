@@ -16,3 +16,5 @@ function e(n) {
     return sum;
 }
 
+module.exports = { factorial, e };
+
